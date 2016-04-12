@@ -36,26 +36,6 @@ gulp.task('styles', () => {
     .pipe(gulp.dest(config.sass_dest))
 });
 
-// Lint my js (airbnb stylguide)
-gulp.task('lint', () => {
-  gulp.src(config.js_src)
-    .pipe($.eslint())
-    .pipe($.eslint.format())
-    .pipe($.if(!browserSync.active, $.eslint.failOnError()))
-});
-
-// Concat, sourcemaps and minify js files
-gulp.task('scripts', () => {
-  gulp.src(config.js_src)
-    .pipe($.if(argv.pretty, $.sourcemaps.init()))
-    .pipe($.babel())
-    .pipe($.concat(config.js_file_name))
-    .pipe($.if(!argv.pretty, $.uglify({preserveComments: 'some'})))
-    .pipe($.if(argv.pretty, $.sourcemaps.write('.')))
-    .pipe($.size({title: 'Scripts'}))
-    .pipe(gulp.dest(config.js_dest))
-});
-
 // Clean the dist/ folder
 gulp.task('clean', () => del(config.del_folder, {dot: true}));
 
@@ -66,26 +46,23 @@ gulp.task('copy', ['clean'], () => {
 });
 
 // Serve the content, live reload with browsersync
-gulp.task('serve', ['styles', 'lint', 'scripts'], () => {
+gulp.task('serve', ['styles'], () => {
   let serverDir = !argv.pretty ? './dist' : './src';
   browserSync.init({
     notify: false,
     server: {
-      baseDir: serverDir
+      baseDir: './src'
     },
     port: config.port
   });
 
-  gulp.watch([`${serverDir}/**/*.html`], [reload]);
-  gulp.watch([`${serverDir}/css/**/*.scss`], ['styles', reload]);
-  gulp.watch([`${serverDir}/js/vendor/**/*.js`, `./${serverDir}/js/build/**/*.js`], ['lint', 'scripts', reload]);
-  gulp.watch([`${serverDir}/img/**/*`], reload);
+  gulp.watch(['./src/**/*.html'], [reload]);
+  gulp.watch(['./src/css/**/*.scss'], ['styles', reload]);
 });
 
 gulp.task('production', () => {
   runSequence(
     'styles',
-    ['lint', 'scripts'],
     'copy'
   );
 });
