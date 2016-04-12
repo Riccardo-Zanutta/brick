@@ -1,0 +1,61 @@
+@import "config";
+@import "helpers";
+@import "reset";
+
+/* BASE */
+
+* {
+  &, &:before, &:after { box-sizing: border-box; }
+}
+
+html, body {
+  width: 100%;
+  @if settings('sticky-footer') == false {
+    height: 100%;
+  }
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  position: relative;
+  @if settings('sticky-footer') {
+    min-height: 100%;
+  }
+}
+
+body {
+  background: $body-bg;
+  color: $text-color;
+  font-size: $font-size-base;
+  font-family: $font-stack;
+  line-height: $line-base;
+  -webkit-tap-highlight-color: transparent;
+  @if settings('use-font-smooth') {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  @if settings('sticky-footer') {
+    margin: 0 0 $footer-height;
+  }
+}
+
+// Selection colors
+::selection {
+  background: $selection-bg;
+  color: $selection-color;
+  text-shadow: none;
+}
+
+::-webkit-selection {
+  background: $selection-bg;
+  color: $selection-color;
+  text-shadow: none;
+}
+
+img::selection {
+  background: transparent;
+}
+
+@import "typography";
+@import "media";

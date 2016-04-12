@@ -1,0 +1,123 @@
+//  Typography
+
+// Font Family declaration
+
+
+/* Basic Typography */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $headings-font-family;
+  color: $headings-color;
+  line-height: $headings-line-height;
+  letter-spacing: 1px;
+  margin: 0 0 20px 0;
+  padding: 0;
+}
+
+h1, .h1 {
+  font-size: $font-size-h1;
+}
+
+h2, .h2 {
+  font-size: $font-size-h2;
+}
+
+h3, .h3 {
+  font-size: $font-size-h3;
+}
+
+h4, .h4 {
+  font-size: $font-size-h4;
+}
+
+h5, .h5 {
+  font-size: $font-size-h5;
+}
+
+h6, .h6 {
+  font-size: $font-size-h6;
+}
+
+small, .small {
+  font-size: $font-size-small;
+}
+
+// Links
+a {
+  color: $link-color;
+  text-decoration: none;
+  &:not([class]) {
+    color: lighten($text-color, 25%);
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  &.link {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+p {
+  margin: 0 0 15px 0;
+}
+
+hr {
+  border-bottom: 1px solid $text-color;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  margin: $base-spacing 0;
+  clear: both;
+}
+
+ul, ol {
+  &.no_list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+em {
+  font-style: italic;
+}
+
+strong {
+  font-weight: bold;
+}
+
+@if settings('minor-typo') {
+  abbr[title] {
+    border-bottom: 1px dotted;
+  }
+
+  abbr, acronym {
+    cursor: help;
+  }
+
+  // Code
+  tt, code {
+    font-family: $font-family-monospace;
+    font-size: em(12px);
+  }
+
+  pre {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: $text-color;
+    word-break: break-all;
+    word-wrap: break-word;
+    font-family: $font-family-monospace;
+    tab-size: 2;
+    > code {
+      padding: 0;
+      font-size: inherit;
+      color: inherit;
+      white-space: pre-wrap;
+      background-color: transparent;
+      border-radius: 0;
+    }
+  }
+}

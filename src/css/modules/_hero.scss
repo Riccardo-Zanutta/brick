@@ -1,0 +1,9 @@
+/* Header module */
+
+%hero {
+  width: 100%;
+  display: block;
+  position: relative;
+  background-color: $hero-bg;
+  z-index: z("header");
+}

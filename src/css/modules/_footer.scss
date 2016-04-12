@@ -1,0 +1,16 @@
+/* Footer Module */
+
+.footer {
+  width: 100%;
+  height: $footer-height;
+  background: $footer-bg;
+  color: $footer-color;
+  @if settings('sticky-footer') {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+  a {
+    color: $footer-color;
+  }
+}

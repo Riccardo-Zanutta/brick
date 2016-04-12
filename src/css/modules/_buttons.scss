@@ -1,0 +1,37 @@
+/* Button Module */
+
+%button_base {
+  cursor: pointer;
+  text-decoration: none;
+  background: transparent;
+  padding: 0;
+  border: 0;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  white-space: nowrap;
+}
+
+%button_brand {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+}
+
+button {
+  @extend %button_base;
+  background-image: none;
+  &:focus, &:active {
+    outline: none;
+    box-shadow: none;
+    border: none;
+  }
+  &.button-disabled, &[disabled] {
+    cursor: not-allowed;
+    opacity: 0.65;
+  }
+}
+
+.button-full {
+  display: block;
+  width: 100%;
+}

@@ -1,0 +1,14 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Team Member -- Role -- Social Link
+
+# THANKS
+
+    Coffee.
+
+# TECHNOLOGY COLOPHON
+
+    CSS3, HTML5, Javascript, BRick
