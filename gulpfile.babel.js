@@ -54,6 +54,7 @@ gulp.task('clean', () => del(config.del_folder, {dot: true}));
 // Copy the content from the src/ folder to the dist/ one
 gulp.task('copy', ['clean'], () => {
   return gulp.src(config.src_folder)
+    .pipe($.size({title: 'Copying ./src content in ./dist'}))
     .pipe(gulp.dest(config.dist_folder))
 });
 
