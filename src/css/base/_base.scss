@@ -10,18 +10,13 @@
 
 html, body {
   width: 100%;
-  @if settings('sticky-footer') == false {
-    height: 100%;
-  }
+  height: 100%;
   margin: 0;
   padding: 0;
 }
 
 html {
   position: relative;
-  @if settings('sticky-footer') {
-    min-height: 100%;
-  }
 }
 
 body {
@@ -34,9 +29,6 @@ body {
   @if settings('use-font-smooth') {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-  }
-  @if settings('sticky-footer') {
-    margin: 0 0 $footer-height;
   }
 }
 
