@@ -1,4 +1,4 @@
-# BRick - A solid, modern, not-so-opinionated boilerplate. #
+# BRick - A solid, modern, not-so-opinionated front-end boilerplate. #
 
 **Development guide**
 

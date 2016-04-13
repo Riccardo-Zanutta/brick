@@ -1,10 +1,8 @@
 {
   "port": "4001",
-  "src_folder": ["./src/**/*", "!./src/img/original"],
+  "src_folder": ["./src/**/*"],
   "dist_folder": "./dist/",
   "del_folder": "./dist",
-  "html_src": "./src/*.html",
-  "html_dest": "./src",
   "sass_src": "./src/css/**/*.scss",
   "sass_dest": "./src/css",
   "autoprefixer_options": {
@@ -12,7 +10,5 @@
   },
   "js_src": ["./src/js/vendor/**/*.js", "./src/js/build/**/*.js"],
   "js_file_name": "application.js",
-  "js_dest": "./src/js",
-  "img_src": "./src/img/original/*",
-  "img_dest": "./src/img/"
+  "js_dest": "./src/js"
 }

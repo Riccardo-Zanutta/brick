@@ -36,6 +36,18 @@ gulp.task('styles', () => {
     .pipe(gulp.dest(config.sass_dest))
 });
 
+// Concat, sourcemaps and minify js files
+gulp.task('scripts', () => {
+  gulp.src(config.js_src)
+    .pipe($.if(argv.pretty, $.sourcemaps.init()))
+    .pipe($.babel())
+    .pipe($.concat(config.js_file_name))
+    .pipe($.if(!argv.pretty, $.uglify({preserveComments: 'some'})))
+    .pipe($.if(argv.pretty, $.sourcemaps.write('.')))
+    .pipe($.size({title: 'Scripts'}))
+    .pipe(gulp.dest(config.js_dest))
+});
+
 // Clean the dist/ folder
 gulp.task('clean', () => del(config.del_folder, {dot: true}));
 
@@ -46,8 +58,7 @@ gulp.task('copy', ['clean'], () => {
 });
 
 // Serve the content, live reload with browsersync
-gulp.task('serve', ['styles'], () => {
-  let serverDir = !argv.pretty ? './dist' : './src';
+gulp.task('serve', ['styles', 'scripts'], () => {
   browserSync.init({
     notify: false,
     server: {
@@ -58,11 +69,13 @@ gulp.task('serve', ['styles'], () => {
 
   gulp.watch(['./src/**/*.html'], [reload]);
   gulp.watch(['./src/css/**/*.scss'], ['styles', reload]);
+  gulp.watch(['./src/js/vendor/**/*.js', './src/js/build/**/*.js'], ['scripts', reload]);
 });
 
 gulp.task('production', () => {
   runSequence(
     'styles',
+    'scripts',
     'copy'
   );
 });
