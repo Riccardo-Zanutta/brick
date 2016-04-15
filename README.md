@@ -5,7 +5,7 @@
 <a href="https://www.youtube.com/watch?v=Sagg08DrO5U"><img src='http://img.shields.io/badge/gandalf-approved-61C6FF.svg'></a>
 
 ### Docs
-For a more detailed documentation, check the <a href="">official website</a>.
+For a more detailed documentation, check the <a href="http://riccardo-zanutta.github.io/brick/">official website</a>.
 
 ### Introduction
 
