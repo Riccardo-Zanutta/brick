@@ -34,6 +34,8 @@ $ gulp --pretty
 ### Additional infos
 
 ```sh
+# Go in production
+$ gulp production // this creates a ./dist folder insider your project
 # You can view all of your available tasks with:
 $ gulp help 
 ```
