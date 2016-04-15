@@ -29,6 +29,13 @@ $ gulp --pretty
 
 <a href="https://www.browsersync.io/">Browsersync</a> will mount a web server for you and opens a tab in your browser at localhost:4001 (this is the default port, you can change it in the <a href="https://github.com/Riccardo-Zanutta/brick/blob/master/config.json">config.json</a> file).
 
+### Additional infos
+
+```sh
+# You can view all of your available tasks with:
+$ gulp help 
+```
+
 ### Contributing
 
 If you have any suggestions about the css and js structure/best practices, new gulp tasks and so on, please contribute and make a pull request.
@@ -37,10 +44,3 @@ If you have any suggestions about the css and js structure/best practices, new g
 * if you have to test some new css/js feature, type ``` npm run start ``` which will start the dev server.
 * Make a pull request
 * Feel proud to contribute to the open source world :) 
-
-### Additional infos
-
-```sh
-# You can view all of your available tasks with:
-$ gulp help 
-```
