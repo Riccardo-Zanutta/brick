@@ -1,8 +1,9 @@
 .table {
   width: 100%;
+  margin-bottom: $base-padding;
   th, td {
     border-bottom: .1rem solid #e1e1e1;
-    padding: 15px 22px;
+    padding: 10px 20px;
     text-align: left;
     &:first-child {
       padding-left: 0;
