@@ -17,7 +17,7 @@ $ npm run start
 $ gulp --pretty
 ```
 
-You'll have everything up & running(the browser is automatically open and ready for live-reload development).
+<a href="https://www.browsersync.io/">Browsersync</a> will mount a web server for you and opens a tab in your browser at localhost:4001 (this is the default port, you can change it in the <a href="https://github.com/Riccardo-Zanutta/brick/blob/master/config.json">config.json</a>)
 
 ### Additional infos
 * Modify the package.json and config.json with your variables/config
