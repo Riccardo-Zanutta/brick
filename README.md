@@ -1,4 +1,4 @@
-# BRick - A solid, modern, not-so-opinionated front-end boilerplate. #
+# Brick - A solid, modern, not-so-opinionated front-end boilerplate. #
 
 <a href="https://www.youtube.com/watch?v=Sagg08DrO5U"><img src='http://img.shields.io/badge/gandalf-approved-61C6FF.svg'></a>
 
@@ -12,7 +12,9 @@ $ cd new_project
 # Install dependencies
 $ npm install
 # Run tasks and serve
-$ gulp
+$ npm run start
+# or
+$ gulp --pretty
 ```
 
 You'll have everything up & running(the browser is automatically open and ready for live-reload development).
