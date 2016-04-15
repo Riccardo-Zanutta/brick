@@ -3,7 +3,7 @@
 %button_base {
   cursor: pointer;
   text-decoration: none;
-  background: transparent;
+  background-color: transparent;
   padding: 0;
   border: 0;
   -ms-touch-action: manipulation;
@@ -28,6 +28,21 @@ button {
   &.button-disabled, &[disabled] {
     cursor: not-allowed;
     opacity: 0.65;
+  }
+}
+
+// Example button component
+.button {
+  @extend %button_base;
+  @extend %button_brand;
+  background-color: $picton-blue;
+  border-radius: 3px;
+  padding: 5px 25px;
+  color: white;
+  margin-bottom: 16px;
+  transition: background-color 0.3s ease;
+  &:hover, &:focus {
+    background-color: darken($picton-blue, 10%);
   }
 }
 

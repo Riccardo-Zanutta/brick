@@ -123,6 +123,15 @@ $pseudo-phprefix: "::-webkit-input-placeholder" "::-moz-placeholder" ":-ms-input
   margin-right: auto;
 }
 
+@mixin list-inline() {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  li {
+    display: inline-block;
+  }
+}
+
 @mixin triangle($direction, $color: white, $size: 7px) {
   width: 0;
   height: 0;

@@ -25,9 +25,10 @@ section {
   @include clearfix();
 }
 
-.text-center    { text-align: center !important; }
-.text-left       { text-align: left !important; }
-.text-right     { text-align: right !important; }
-.text-uppercase { text-transform: uppercase !important; }
+.text-center    { text-align: center; }
+.text-left      { text-align: left; }
+.text-right     { text-align: right; }
+.text-uppercase { text-transform: uppercase; }
+.full-width     { width: 100%; }
 
 @import "print";

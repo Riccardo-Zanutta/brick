@@ -2,9 +2,8 @@
 
 $_settings: (
   'use-opentype'    :     false,
-  'use-icon-fonts'  :     false,
   'use-font-smooth' :     true,
-  'minor-typo'      :     false,
+  'minor-typo'      :     true,
   'form-controls'   :     false
 );
 
@@ -15,10 +14,13 @@ $_settings: (
 
 // COLORS
 
-// Project-colors
+// Base colors
 $black        :  #000000;
 $mine-shaft   :  #333333;
 $white        :  #ffffff;
+
+// Project specific colors
+$picton-blue  :  #33C3F0;
 
 // Typical Social-brand colors
 $fb           :  #3b5998;
@@ -56,9 +58,10 @@ $font-size-h6           : $font-size-base !default;
 $font-size-small        : $font-size-base * 0.70 !default;
 
 // By default, this inherits from the body.
-$headings-font-family : inherit !default;
-$headings-color       : inherit !default;
-$headings-line-height : 1.25 !default;
+$headings-font-family   : inherit !default;
+$headings-color         : inherit !default;
+$headings-margin-bottom : 15px !default;
+$headings-line-height   : 1.25 !default;
 
 // BASE
 
@@ -71,27 +74,14 @@ $selection-bg     : $text-color !default;
 
 // MODULES
 
-// ie-prompt
-$warning-bg    : #ccc;
-$warning-color :  #dd6f00;
+// Buttons
 
 // Header
 $hero-bg : #333;
 
-// Cookie Banner
-$cookie-banner-bg   : #fafafa;
-$cookie-banner-color: #333;
+// Form
 
-// Button colors.
-
-// Navbar colors.
-$nav-bg    : white;
-$nav-color : black;
-
-// Footer colors.
-$footer-bg     : $mine-shaft;
-$footer-color  : $white;
-$footer-height : 75px;
+// Table
 
 // VIEWS
 
