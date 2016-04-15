@@ -30,5 +30,6 @@ section {
 .text-right     { text-align: right; }
 .text-uppercase { text-transform: uppercase; }
 .full-width     { width: 100%; }
+.spacing        { padding: $base-padding 0; }
 
 @import "print";
