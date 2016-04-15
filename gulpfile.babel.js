@@ -27,7 +27,8 @@ gulp.task('styles', () => {
   return gulp.src(config.sass_src)
     .pipe($.if(argv.pretty, $.sourcemaps.init()))
     .pipe($.sass({
-      precision: 10
+      precision: 10,
+      includePaths: ['./src/css/']
     }).on('error', $.sass.logError))
     .pipe($.autoprefixer(config.autoprefixer_options))
     .pipe($.if(!argv.pretty, $.cssnano()))
