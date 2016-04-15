@@ -2,6 +2,9 @@
 
 <a href="https://www.youtube.com/watch?v=Sagg08DrO5U"><img src='http://img.shields.io/badge/gandalf-approved-61C6FF.svg'></a>
 
+### Docs
+For a more detailed documentation, check the <a href="">official website</a>.
+
 ### Introduction
 
 Brick will give you a solid starting point to develop your next awesome project.
@@ -25,14 +28,6 @@ $ gulp --pretty
 ```
 
 <a href="https://www.browsersync.io/">Browsersync</a> will mount a web server for you and opens a tab in your browser at localhost:4001 (this is the default port, you can change it in the <a href="https://github.com/Riccardo-Zanutta/brick/blob/master/config.json">config.json</a> file).
-
-### Config
-In the root of your project there's a ``` config.json ``` file, from which you can change some basic options.
-If you work with <a href="http://gulpjs.com/">Gulp</a> you can see the ``` gulpfile.babel.js ``` file and change the config file accordingly.
-
-### CSS
-
-### Javacript
 
 ### Contributing
 
