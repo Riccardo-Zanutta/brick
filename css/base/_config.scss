@@ -1,0 +1,146 @@
+// Project config map
+
+$_settings: (
+  'use-opentype'    :     false,
+  'use-font-smooth' :     true,
+  'minor-typo'      :     true,
+  'form-controls'   :     false
+);
+
+// Retrieve data from the map
+@function settings($key) {
+  @return map-get($_settings, $key);
+}
+
+// COLORS
+
+// Base colors
+$black        :  #000000;
+$mine-shaft   :  #333333;
+$white        :  #ffffff;
+
+// Project specific colors
+$picton-blue  :  #33C3F0;
+
+// Typical Social-brand colors
+$fb           :  #3b5998;
+$twitter      :  #55acee;
+$gplus        :  #dd4b39;
+$linkedin     :  #007bb6;
+$instagram    :  #517fa4;
+$pinterest    :  #cb2027;
+$flickr-1     :  #ff0084;
+$flickr-2     :  #0063dc;
+$tumblr       :  #32506d;
+$dribble      :  #ea4c89;
+$behance      :  #1769ff;
+$vine         :  #00bf8f;
+$spotify      :  #2ebd59;
+$tripadvisor  :  #589442;
+$yahoo        :  #400191;
+$youtube      :  #cd201f;
+
+// TYPOGRAPHY
+
+$font-family-sans-serif : "Helvetica", "Roboto", "Arial", sans-serif !default;
+$font-family-serif      : "Palatino Linotype", "Times New Roman", Times, serif !default;
+$font-family-monospace  : "Consolas", "Monaco", "Bitstream Vera Sans Mono", "Courier", monospace !default;
+$font-stack             : $font-family-sans-serif !default;
+$font-size-base         : 1em !default;
+$em-base                : 16px;
+$line-base              : 1.5 !default;
+$font-size-h1           : $font-size-base * 3.60 !default;
+$font-size-h2           : $font-size-base * 3.10 !default;
+$font-size-h3           : $font-size-base * 2.60 !default;
+$font-size-h4           : $font-size-base * 2.35 !default;
+$font-size-h5           : $font-size-base * 1.85 !default;
+$font-size-h6           : $font-size-base !default;
+$font-size-small        : $font-size-base * 0.70 !default;
+
+// By default, this inherits from the body.
+$headings-font-family   : inherit !default;
+$headings-color         : inherit !default;
+$headings-margin-bottom : 15px !default;
+$headings-line-height   : 1.25 !default;
+
+// BASE
+
+$body-bg          : $white !default;
+$base-spacing     : $line-base * $font-size-base !default;
+$text-color       : $mine-shaft !default;
+$link-color       : $mine-shaft !default;
+$base-padding     : $headings-margin-bottom;
+$selection-color  : $body-bg !default;
+$selection-bg     : $text-color !default;
+
+// MODULES
+
+// Buttons
+
+// Header
+$hero-bg : #333;
+
+// Form
+
+// Table
+
+// VIEWS
+
+$main-max-width       :  1000px !default;
+$main-max-width_large :  1170px !default;
+
+// GRID
+
+// TODO
+
+// Breakpoints
+$phone-down    : 319px;
+$phone         : 320px;
+$mobile-down   : 540px;
+$mobile        : 541px;
+$tab-down      : 767px;
+$tab           : 768px;
+$desk-down     : 1023px;
+$desk          : 1024px;
+$large         : 1200px;
+$x-large       : 1600px;
+
+// UTILS
+
+// CSS cubic-bezier timing functions. Refer to http://cubic-bezier.com/ or http://matthewlein.com/ceaser/ for more.
+// EASE IN
+$ease-in-quad       :  cubic-bezier(0.550,  0.085, 0.680, 0.530);
+$ease-in-cubic      :  cubic-bezier(0.550,  0.055, 0.675, 0.190);
+$ease-in-quart      :  cubic-bezier(0.895,  0.030, 0.685, 0.220);
+$ease-in-quint      :  cubic-bezier(0.755,  0.050, 0.855, 0.060);
+$ease-in-sine       :  cubic-bezier(0.470,  0.000, 0.745, 0.715);
+$ease-in-expo       :  cubic-bezier(0.950,  0.050, 0.795, 0.035);
+$ease-in-circ       :  cubic-bezier(0.600,  0.040, 0.980, 0.335);
+$ease-in-back       :  cubic-bezier(0.600, -0.280, 0.735, 0.045);
+// EASE OUT
+$ease-out-quad      :  cubic-bezier(0.250,  0.460, 0.450, 0.940);
+$ease-out-cubic     :  cubic-bezier(0.215,  0.610, 0.355, 1.000);
+$ease-out-quart     :  cubic-bezier(0.165,  0.840, 0.440, 1.000);
+$ease-out-quint     :  cubic-bezier(0.230,  1.000, 0.320, 1.000);
+$ease-out-sine      :  cubic-bezier(0.390,  0.575, 0.565, 1.000);
+$ease-out-expo      :  cubic-bezier(0.190,  1.000, 0.220, 1.000);
+$ease-out-circ      :  cubic-bezier(0.075,  0.820, 0.165, 1.000);
+$ease-out-back      :  cubic-bezier(0.175,  0.885, 0.320, 1.275);
+// EASE IN OUT
+$ease-in-out-quad   :  cubic-bezier(0.455,  0.030, 0.515, 0.955);
+$ease-in-out-cubic  :  cubic-bezier(0.645,  0.045, 0.355, 1.000);
+$ease-in-out-quart  :  cubic-bezier(0.770,  0.000, 0.175, 1.000);
+$ease-in-out-quint  :  cubic-bezier(0.860,  0.000, 0.070, 1.000);
+$ease-in-out-sine   :  cubic-bezier(0.445,  0.050, 0.550, 0.950);
+$ease-in-out-expo   :  cubic-bezier(1.000,  0.000, 0.000, 1.000);
+$ease-in-out-circ   :  cubic-bezier(0.785,  0.135, 0.150, 0.860);
+$ease-in-out-back   :  cubic-bezier(0.680, -0.550, 0.265, 1.550);
+
+// Z-Layers Map
+$z-layers: (
+  highest   :  50,
+  banner    :  20,
+  menu      :  10,
+  header    :  2,
+  default   :  1
+);

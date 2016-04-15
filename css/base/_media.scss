@@ -1,0 +1,32 @@
+/* Media elements */
+// Responsive Media Elements
+
+img, picture, video, audio, embed, object, input, iframe {
+  max-width: 100%;
+  margin: 0;
+}
+
+img {
+  display: inline-block;
+  vertical-align: middle;
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+  // Fix for SVGs
+  &[src*=".svg"] {
+    width: 100% \9;
+  }
+
+  // prevents border/background on linked image hover
+  a:hover & {
+    border: none;
+    background: none;
+  }
+}
+
+x::-ms-reveal, img[src*=".svg"] {
+  width: 100%;
+}
+
+a img {
+  border: none;
+}

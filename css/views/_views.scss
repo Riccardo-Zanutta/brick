@@ -1,0 +1,35 @@
+/* General layout */
+
+section {
+  width: 100%;
+  display: block;
+  position: relative;
+  @include clearfix();
+}
+
+// Layout Utility classes
+.content {
+  width: $main-max-width;
+  margin: 0 auto;
+  @include clearfix();
+  @include mq-min($large) {
+    width: $main-max-width_large;
+  }
+  @include mq-max($desk) {
+    width: 95%;
+  }
+}
+
+.inner-container {
+  width: 100%;
+  @include clearfix();
+}
+
+.text-center    { text-align: center; }
+.text-left      { text-align: left; }
+.text-right     { text-align: right; }
+.text-uppercase { text-transform: uppercase; }
+.full-width     { width: 100%; }
+.spacing        { padding: $base-padding 0; }
+
+@import "print";

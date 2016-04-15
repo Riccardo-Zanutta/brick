@@ -1,0 +1,176 @@
+// Strip the units from a value
+@function strip-units($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+// Calculate ems from a px value
+@function em($px, $context: $em-base) {
+  @if not unitless($px) {
+    $px: strip-units($px);
+  }
+  @if not unitless($context) {
+    $context: strip-units($context);
+  }
+  @return ($px / $context) * 1em;
+}
+
+// Managing Z-Layers & icon font names
+@function z($layer: "base") {
+  @if not map-has-key($z-layers, $layer) {
+    @warn "No z-index found in $z-layers map for '#{$layer}'. Property omitted.";
+  }
+  @return map-get($z-layers, $layer);
+}
+
+// Classic Clearfix
+@mixin clearfix {
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// Visually hide but still accessible to screenreaders
+@mixin visual-hide() {
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+}
+
+// Resets visual-hide()
+@mixin visual-hide-off {
+  position: static;
+  height: auto;
+  width: auto;
+  overflow: visible;
+  clip: auto;
+}
+
+// Text hiding for image based text replacement.
+// Higher performance than -9999px because it only renders
+// the size of the actual text, not a full 9999px box.
+@mixin hide-text() {
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+}
+
+// Text overflow
+// Requires inline-block or block for proper styling
+@mixin text-overflow($overflow: ellipsis) {
+  overflow: hidden;
+  text-overflow: $overflow;
+  white-space: nowrap;
+}
+
+// Keeping text vertically centered at all screen sizes(Fixed Height)
+// Apply on the parent. Requires inline-block on the child
+@mixin pseudo-mid-align() {
+  &:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+  }
+}
+
+// Placeholder text
+$pseudo-phprefix: "::-webkit-input-placeholder" "::-moz-placeholder" ":-ms-input-placeholder" "::placeholder";
+@mixin placeholder {
+  @each $pseudo in $pseudo-phprefix {
+    @at-root #{&}#{$pseudo} {
+      @content
+    }
+  }
+}
+
+// Sizing
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin align($width: null, $height: null) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  @if not $width and not $height {
+    transform: translate(-50%, -50%);
+  } @else if $width and $height {
+    width: $width;
+    height: $height;
+    margin: -($width / 2) #{0 0} -($height / 2);
+  } @else if not $height {
+    width: $width;
+    margin-left: -($width / 2);
+    transform: translateY(-50%);
+  } @else {
+    height: $height;
+    margin-top: -($height / 2);
+    transform: translateX(-50%);
+  }
+}
+
+@mixin center-block() {
+  display: block;
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin list-inline() {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  li {
+    display: inline-block;
+  }
+}
+
+@mixin triangle($direction, $color: white, $size: 7px) {
+  width: 0;
+  height: 0;
+  @if $direction == 'up' {
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-bottom: $size solid $color;
+  } @else if $direction == 'right' {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-left: $size solid $color;
+  } @else if $direction == 'down' {
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-top: $size solid $color;
+  } @else if $direction == 'left' {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-right: $size solid $color;
+  } @else {
+    @error "Valore errato inserito per '#{$direction}'. ";
+  }
+}
+
+// Media Query Mixins
+@mixin mq($minWidth, $maxWidth) {
+  @media only screen and (min-width: em($minWidth)) and (max-width: em($maxWidth)) {
+    @content;
+  }
+}
+
+@mixin mq-max($maxWidth) {
+  @media only screen and (max-width: em($maxWidth)) {
+    @content;
+  }
+}
+
+@mixin mq-min($minWidth) {
+  @media only screen and (min-width: em($minWidth)) {
+    @content;
+  }
+}
