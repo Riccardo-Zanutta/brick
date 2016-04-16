@@ -95,7 +95,7 @@ $pseudo-phprefix: "::-webkit-input-placeholder" "::-moz-placeholder" ":-ms-input
   height: $height;
 }
 
-@mixin align($width: null, $height: null) {
+@mixin centerer($width: null, $height: null) {
   position: absolute;
   top: 50%;
   left: 50%;

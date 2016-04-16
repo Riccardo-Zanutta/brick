@@ -7,3 +7,39 @@
   background-color: $hero-bg;
   z-index: z("header");
 }
+
+.hero {
+  @extend %hero;
+  height: 400px;
+  height: 85vh;
+  color: white;
+  .hero-title {
+    text-align: center;
+    font-size: em(20px);
+  }
+}
+
+.hero-content {
+  @include align();
+  color: $te-papa-blue;
+}
+
+.hero-button-content {
+  @include align(horizontal);
+  bottom: -13px;
+  color: black;
+  .brick-button {
+    transform: translateY(0);
+    &:hover {
+      transform: translateY(3px);
+    }
+  }
+}
+
+#logo {
+  margin-bottom: 20px;
+  svg {
+    width: 600px;
+    margin: 0 auto;
+  }
+}

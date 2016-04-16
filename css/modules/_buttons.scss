@@ -31,18 +31,22 @@ button {
   }
 }
 
-// Example button component
-.button {
+.brick-button {
   @extend %button_base;
   @extend %button_brand;
-  background-color: $picton-blue;
-  border-radius: 3px;
-  padding: 5px 25px;
-  color: white;
-  margin-bottom: 16px;
-  transition: background-color 0.3s ease;
-  &:hover, &:focus {
-    background-color: darken($picton-blue, 10%);
+  background-color: $te-papa-blue;
+  border-radius: 100px;
+  padding: 16px 40px;
+  color: #fff;
+  font-size: 0.875em;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  box-shadow: 0 5px 20px rgba($te-papa-blue, 0.5);
+  transition: all 0.3s ease;
+  &:hover {
+    background-color: $tall-poppy;
+    box-shadow: 0 5px 20px rgba($darken-poppy, 0.5);
   }
 }
 
