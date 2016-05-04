@@ -12,6 +12,7 @@ For a more detailed documentation, check the <a href="http://riccardo-zanutta.gi
 Brick will give you a solid starting point to develop your next awesome project.
 It includes: 
 * A painless, non-intrusive CSS library, written in <a href="http://sass-lang.com/">Sass</a>;
+* A Sass-based consolidated project structure, a modified version of <a href="https://smacss.com/">SMACSS</a>
 * A solid and extendible development environment with <a href="http://gulpjs.com/">Gulp</a>, <a href="https://www.browsersync.io/">Browsersync</a> and a production environment.
 
 ### Getting started
