@@ -69,7 +69,7 @@ gulp.task('serve', ['styles', 'scripts'], () => {
     port: config.port
   });
 
-  gulp.watch(['./src/**/*.html'], [reload]);
+  gulp.watch(['./src/*.html'], [reload]);
   gulp.watch(['./src/css/**/*.scss'], ['styles', reload]);
   gulp.watch(['./src/js/vendor/**/*.js', './src/js/build/**/*.js'], ['scripts', reload]);
 });
