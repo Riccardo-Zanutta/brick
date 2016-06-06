@@ -50,7 +50,11 @@ gulp.task('scripts', () => {
 });
 
 // Clean the dist/ folder
-gulp.task('clean', () => del(config.del_folder, {dot: true}));
+gulp.task('clean', () => {
+  return del.sync([
+    config.del_folder
+  ])
+});
 
 // Copy the content from the src/ folder to the dist/ one
 gulp.task('copy', ['clean'], () => {
@@ -69,17 +73,13 @@ gulp.task('serve', ['styles', 'scripts'], () => {
     port: config.port
   });
 
-  gulp.watch(['./src/**/*.html'], [reload]);
+  gulp.watch('./src/*.html').on('change', reload);
   gulp.watch(['./src/css/**/*.scss'], ['styles', reload]);
-  gulp.watch(['./src/js/vendor/**/*.js', './src/js/build/**/*.js'], ['scripts', reload]);
+  gulp.watch(['./src/js/vendor/*.js', './src/js/build/*.js'], ['scripts', reload]);
 });
 
-gulp.task('production', () => {
-  runSequence(
-    'styles',
-    'scripts',
-    'copy'
-  );
+gulp.task('production', ['styles', 'scripts'], () => {
+  runSequence('copy');
 });
 
 // This is the default task :)
