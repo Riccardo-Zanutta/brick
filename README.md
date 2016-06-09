@@ -12,7 +12,7 @@ For a more detailed documentation, check the <a href="http://riccardo-zanutta.gi
 Brick will give you a solid starting point to develop your next awesome project.
 It includes: 
 * A painless, non-intrusive CSS library, written in <a href="http://sass-lang.com/">Sass</a>;
-* A solid and extendible development environment with <a href="http://gulpjs.com/">Gulp</a>, <a href="https://www.browsersync.io/">Browsersync</a> and a production environment.
+* A solid and extensible development environment, with <a href="http://gulpjs.com/">Gulp</a>, <a href="https://www.browsersync.io/">Browsersync</a>.
 
 ### Getting started
 
@@ -31,14 +31,10 @@ $ gulp --pretty
 
 <a href="https://www.browsersync.io/">Browsersync</a> will mount a web server for you and opens a tab in your browser at localhost:4001 (this is the default port, you can change it in the <a href="https://github.com/Riccardo-Zanutta/brick/blob/master/config.json">config.json</a> file).
 
-### Additional infos
+### Tasks
 
-```sh
-# Go in production
-$ gulp production // this creates a ./dist folder insider your project
-# You can view all of your available tasks with:
-$ gulp help 
-```
+* With ``` gulp help ``` you can obtain all automatic tasks used in the project.
+* With ``` gulp production ``` or ``` npm run dist ``` you can create a ``` dist/ ``` folder which contains your project with all assets optimized and ready to be deployed.
 
 ### Contributing
 
