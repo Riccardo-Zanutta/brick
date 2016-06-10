@@ -1,0 +1,47 @@
+/* Site related */
+
+.menu-toggle {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  @include size(40px, 50px);
+  margin-left: -(40px / 2);
+  margin-top: -(50px / 2);
+
+  span {
+    display: block;
+    @include size(40px, 3px);
+    margin: 0 0 5px;
+    background: $te-papa-blue;
+    transition: all 0.2s ease;
+  }
+
+  &:hover {
+    cursor: pointer;
+    span {
+      &:nth-child(2) {
+        transform: translateX(5px);
+      }
+    }
+  }
+
+  &.is-open {
+    span {
+      background: $te-papa-blue;
+      &:first-child {
+        transition-delay: 0.2s;
+        transform: rotate(45deg);
+        transform-origin: 10px 50%;
+      }
+      &:nth-child(2) {
+        transform: translateX(40px);
+        opacity: 0;
+      }
+      &:nth-child(3) {
+        transition-delay: 0.4s;
+        transform: rotate(-45deg);
+        transform-origin: 8px 50%;
+      }
+    }
+  }
+}

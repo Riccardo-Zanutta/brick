@@ -59,17 +59,19 @@ gulp.task('serve', ['styles', 'scripts'], () => {
     port: config.port
   });
 
-  gulp.watch(['./*.html'], [reload]);
+  gulp.watch('./*.html').on('change', reload);
   gulp.watch(['./css/**/*.scss'], ['styles', reload]);
-  gulp.watch(['./js/vendor/**/*.js', './js/build/**/*.js'], ['scripts', reload]);
+  gulp.watch(['./js/vendor/*.js', './js/build/*.js'], ['scripts', reload]);
 });
+
+gulp.task('production', ['styles', 'scripts']);
 
 // This is the default task :)
 gulp.task('default', () => {
   const startTime = Date.now();
   runSequence('serve', () => {
     console.log('\x1b[42m************************************\x1b[0m\n');
-    console.log('\x1b[32m  BRick for gh-pages is ready to Rock!\x1b[0m\n');
+    console.log('\x1b[32m  BRick is ready to Rock!\x1b[0m\n');
     console.log('\x1b[42m************************************\x1b[0m\n');
     console.log('[\x1b[32mBRick\x1b[0m]', `All finished in \x1b[35m${Date.now() - startTime} ms` ,'\x1b[0m\n');
   })
