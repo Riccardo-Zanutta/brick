@@ -21,6 +21,7 @@
     span {
       &:nth-child(2) {
         transform: translateX(5px);
+        background-color: $tall-poppy;
       }
     }
   }

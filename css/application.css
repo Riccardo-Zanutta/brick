@@ -377,7 +377,7 @@ body {
   background: #ffffff;
   color: #333333;
   font-size: 1em;
-  font-family: "Helvetica", "Roboto", "Arial", sans-serif;
+  font-family: "Open Sans", "Roboto", "Arial", sans-serif;
   line-height: 1.5;
   -webkit-tap-highlight-color: transparent;
   -webkit-font-smoothing: antialiased;
@@ -566,7 +566,7 @@ button {
 
 .hero {
   height: 400px;
-  height: 85vh;
+  height: 90vh;
   color: white;
   background: #f9f9f9; }
   .hero .hero-title {
@@ -662,7 +662,8 @@ textarea {
     .menu-toggle:hover span:nth-child(2) {
       -webkit-transform: translateX(5px);
           -ms-transform: translateX(5px);
-              transform: translateX(5px); }
+              transform: translateX(5px);
+      background-color: #BF3A2A; }
   .menu-toggle.is-open span {
     background: #21363A; }
     .menu-toggle.is-open span:first-child {
@@ -790,6 +791,18 @@ section {
   .github-corner .octo-arm {
     -webkit-animation: octocat-wave 560ms ease-in-out;
             animation: octocat-wave 560ms ease-in-out; } }
+
+.not-centered-content {
+  padding: 55px 0; }
+
+.pro {
+  float: left;
+  clear: none;
+  width: 31.3333333333%;
+  margin-left: 0;
+  margin-right: 3%; }
+  .pro:last-child {
+    margin-right: 0; }
 
 /* PRINT STYLES */
 @media print {
