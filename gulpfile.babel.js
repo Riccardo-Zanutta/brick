@@ -41,7 +41,7 @@ gulp.task('styles', () => {
 gulp.task('scripts', () => {
   gulp.src(config.js_src)
     .pipe($.if(argv.pretty, $.sourcemaps.init()))
-    .pipe($.babel())
+    //.pipe($.babel())
     .pipe($.concat(config.js_file_name))
     .pipe($.if(!argv.pretty, $.uglify({preserveComments: 'some'})))
     .pipe($.if(argv.pretty, $.sourcemaps.write('.')))

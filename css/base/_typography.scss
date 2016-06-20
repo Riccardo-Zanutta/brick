@@ -101,10 +101,14 @@ strong {
     tab-size: 2;
     margin-bottom: 12px;
     white-space: nowrap;
-    border: 1px solid #E1E1E1;
+    border: 3px solid #E1E1E1;
     border-radius: 4px;
+    background: #f2f2f2;
     > code {
       display: block;
+      font-size: 14px;
+      color: lighten($te-papa-blue, 10%);
+      font-weight: bold;
       padding: 1rem 1.5rem;
       white-space: pre;
     }

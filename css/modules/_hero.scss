@@ -25,6 +25,87 @@
   color: $te-papa-blue;
 }
 
+.hero-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  @include size(100%);
+  z-index: -1;
+  opacity: 0.65;
+  overflow: hidden;
+  .hero-brick-pattern {
+    position: absolute;
+    bottom: -80px;
+    left: -40px;
+    width: 300px;
+    height: 200px;
+    opacity: 1;
+    &-1 {
+      left: 80px;
+      z-index: -1;
+    }
+    &-2 {
+      left: 200px;
+      z-index: -2;
+    }
+    &-3 {
+      left: auto;
+      right: -40px;
+    }
+    &-4 {
+      left: auto;
+      right: 80px;
+      z-index: -1;
+    }
+    &-5 {
+      left: auto;
+      right: 200px;
+      z-index: -2;
+    }
+  }
+}
+
+.hero-actions {
+  padding-top: 20px;
+  text-align: center;
+  .star, .documentation {
+    span {
+      display: inline-block;
+      width: 20px;
+      margin-right: 12px;
+      position: relative;
+      top: 4px;
+    }
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: em(14px);
+    letter-spacing: 2px;
+    padding: 5px 0;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40%;
+      height: 3px;
+      background-color: $tall-poppy;
+      transition: width 0.3s ease;
+    }
+    &:hover {
+      &:after {
+        width: 100%;
+      }
+    }
+  }
+  .star {
+    margin-right: 75px;
+  }
+}
+
 .hero-button-content {
   @include align(horizontal);
   bottom: -13px;

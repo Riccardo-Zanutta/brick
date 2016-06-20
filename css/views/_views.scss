@@ -31,6 +31,7 @@ section {
 .text-uppercase { text-transform: uppercase; }
 .full-width     { width: 100%; }
 .spacing        { padding: $base-padding 0; }
+.button-content { padding: 50px 0; }
 
 .github-corner:hover .octo-arm {
   animation: octocat-wave 560ms ease-in-out;
@@ -77,6 +78,26 @@ section {
 
 .pro {
   @include col(1/3);
+}
+
+#installation h2 {
+  margin-bottom: 45px;
+}
+
+.installation-option {
+  @include col(1/2);
+  &-title {
+    text-align: center;
+    font-size: em(20px);
+  }
+  pre {
+    transition: all 0.3s ease;
+  }
+  &:hover {
+    pre {
+      border-color: rgba($tall-poppy, 0.5);
+    }
+  }
 }
 
 @import "print";
