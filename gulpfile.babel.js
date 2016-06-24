@@ -14,6 +14,7 @@ import gulpLoadPlugins from 'gulp-load-plugins';
 import browserSync from 'browser-sync';
 import del from 'del';
 import runSequence from 'run-sequence';
+import merge from 'merge2';
 import { argv } from 'yargs';
 
 const $ = gulpLoadPlugins();
@@ -37,16 +38,20 @@ gulp.task('styles', () => {
     .pipe(gulp.dest(config.sass_dest))
 });
 
-// Concat, sourcemaps and minify js files
+// Concat, babelify, sourcemaps and minify js files
 gulp.task('scripts', () => {
-  gulp.src(config.js_src)
+  return merge(
+    gulp.src(config.js_vendor_src)
+      .pipe($.size({title: 'Vendor scripts'})),
+    gulp.src(config.js_build_src)
+      .pipe($.babel())
+  )
     .pipe($.if(argv.pretty, $.sourcemaps.init()))
-    .pipe($.babel())
     .pipe($.concat(config.js_file_name))
     .pipe($.if(!argv.pretty, $.uglify({preserveComments: 'some'})))
-    .pipe($.if(argv.pretty, $.sourcemaps.write('.')))
+    .pipe($.if(argv.pretty, $.sourcemaps.write('./')))
     .pipe($.size({title: 'Scripts'}))
-    .pipe(gulp.dest(config.js_dest))
+    .pipe(gulp.dest(config.js_dest));
 });
 
 // Clean the dist/ folder
@@ -56,7 +61,7 @@ gulp.task('clean', () => {
   ])
 });
 
-// Copy the content from the src/ folder to the dist/ one
+// Copy the content from src/ to dist/
 gulp.task('copy', ['clean'], () => {
   return gulp.src(config.src_folder)
     .pipe($.size({title: 'Copying ./src content in ./dist'}))

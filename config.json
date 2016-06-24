@@ -8,6 +8,8 @@
   "autoprefixer_options": {
     "browsers": ["last 3 versions", "ie > 9", "and_chr >= 2.3"]
   },
+  "js_build_src": "./src/js/build/**/*.js",
+  "js_vendor_src": "./src/js/vendor/**/*.js",
   "js_src": ["./src/js/vendor/**/*.js", "./src/js/build/**/*.js"],
   "js_file_name": "application.js",
   "js_dest": "./src/js"

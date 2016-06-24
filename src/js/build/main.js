@@ -1,1 +1,3 @@
-console.log('Hello BRick!');
+const brick = 'BRick!';
+
+console.log(`Hello ${brick}`);
